@@ -27,16 +27,16 @@ module.exports.date = function(filename) {
   process.stdout.write(Date());
 }
 
-module.exports.cat = function (filename) {
-  fs.readFile('./' + filename, 'utf8', function(err, data) {
-    if (err) {throw err}
-    else {console.log(data);}
-  })
-};
+// module.exports.cat = function (filename) {
+//   fs.readFile('./' + filename, 'utf8', function(err, data) {
+//     if (err) {throw err}
+//     else {console.log(data);}
+//   })
+// };
 
-module.exports.head = function (filename) {
-  fs.readFile('./' + filename, 'utf8', function(err, data) {
-    if (err) {throw err}
-    else {console.log(data);}
-  })
-};
+// module.exports.head = function (filename) {
+//   fs.readFile('./' + filename, 'utf8', function(err, data) {
+//     if (err) {throw err}
+//     else {console.log(data);}
+//   })
+// };
