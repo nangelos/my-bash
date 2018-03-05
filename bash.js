@@ -1,4 +1,4 @@
-const commands = require('./commands.js')
+const commands = require('./commands')
 const prompt = '\nprompt > ';
 
 process.stdout.write(prompt);

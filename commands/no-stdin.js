@@ -13,8 +13,14 @@ module.exports.ls = function (filenames) {
       });
 }
 
-module.exports.echo = function (argString) {
-  process.stdout.write(argString);
+module.exports.echo = function (args) {
+  const output = args
+  .split(' ')
+  .map(function(arg){
+    return (arg[0] === '$') ? process.env[arg.slice(1)] : arg;
+  })
+  .join(' ');
+  process.stdout.write(output);
 }
 
 module.exports.date = function(filename) {
