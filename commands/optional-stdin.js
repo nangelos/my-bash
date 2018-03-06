@@ -23,7 +23,7 @@ module.exports.cat = function(filenames){
 module.exports.head = function(filename) {
   fs.readFile(filename, {encoding: 'utf8'}, function(err, text){
     if (err) throw err;
-    process.stdout.write(text).split('\n').slice(0, 5).join('\n');
+    process.stdout.write(text.split('\n').slice(0, 5).join('\n'));
     process.stdout.write(prompt);
   });
 }
