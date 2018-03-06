@@ -1,15 +1,18 @@
 'use strict';
 
+const prompt = '\nprompt > ';
 const fs = require('fs');
 
 module.exports.pwd = function (filename) {
    process.stdout.write(process.cwd());
+   process.stdout.write(prompt);
 }
 
 module.exports.ls = function (filenames) {
    fs.readdir('.', function(err, filenames) {
       if (err) throw err;
       process.stdout.write(filenames.join('\n'));
+      process.stdout.write(prompt);
       });
 }
 
@@ -21,10 +24,12 @@ module.exports.echo = function (args) {
   })
   .join(' ');
   process.stdout.write(output);
+  process.stdout.write(prompt);
 }
 
 module.exports.date = function(filename) {
   process.stdout.write(Date());
+  process.stdout.write(prompt);
 }
 
 // module.exports.cat = function (filename) {

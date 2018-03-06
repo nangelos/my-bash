@@ -28,7 +28,11 @@ module.exports.head = function(filename) {
   });
 }
 
-module.exports.tail = function(args) {
-
+module.exports.tail = function(filename) {
+  fs.readFile(filename, {encoding: 'utf8'}, function(err, text){
+    if (err) throw err;
+    process.stdout.write(text.split('\n').slice(-5).join('\n'));
+    process.stdout.write(prompt);
+  });
 }
 

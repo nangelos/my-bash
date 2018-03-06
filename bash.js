@@ -9,5 +9,5 @@ process.stdin.on('data', function (data) {
  const args = tokens.slice(1).join(' ');
  if (commands[cmd]) commands[cmd](args);
  else process.stderr.write('Command not found: ' + cmd);
- process.stdout.write(prompt);
+//  process.stdout.write(prompt);
 });
