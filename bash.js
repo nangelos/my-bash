@@ -11,3 +11,7 @@ process.stdin.on('data', function (data) {
  else process.stderr.write('Command not found: ' + cmd);
 //  process.stdout.write(prompt);
 });
+
+function done (output) {
+  process.stdout.write(output + prompt);
+}
